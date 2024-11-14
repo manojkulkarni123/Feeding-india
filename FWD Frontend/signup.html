@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Feeding India</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <main class="login-container">
+            <h1>Create Account</h1>
+            <form class="login-form" id="signupForm">
+                <div class="form-group">
+                    <select class="form-control" id="userType" required>
+                        <option value="" color="white">Select Account Type</option>
+                        <option value="ngo">NGO</option>
+                        <option value="restaurant">Restaurant</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" placeholder="Organization Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-signup">
+                    Sign Up
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </form>
+            <p class="login-link">Already have an account? <a href="login.html">Login here</a></p>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const userType = document.getElementById('userType').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Generate a unique ID (in a real application, this would be done by the backend)
+            const userId = `${userType}_${Date.now()}`;
+
+            // Store user data (in a real application, this would be sent to a backend)
+            const userData = {
+                id: userId,
+                type: userType,
+                name: name,
+                email: email,
+                password: password // In a real app, this should be properly hashed
+            };
+
+            // Store in localStorage (temporary solution - in real app, use proper backend)
+            let users = JSON.parse(localStorage.getItem('users') || '[]');
+            users.push(userData);
+            localStorage.setItem('users', JSON.stringify(users));
+
+            alert(`Account created successfully! Your ID is: ${userId}`);
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

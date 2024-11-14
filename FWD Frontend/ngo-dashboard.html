@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Dashboard - Feeding India</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">Feeding India</div>
+            <nav>
+                <a href="#" class="active">Available Donations</a>
+                <a href="#claimed">Claimed Donations</a>
+                <a href="#history">History</a>
+                <a href="#profile">Profile</a>
+                <a href="login.html" class="logout">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Available Donations</h1>
+                <div class="filter-controls">
+                    <input type="text" placeholder="Search by location..." class="search-input" padding: 10px;>
+                    <select class="filter-select">
+                        <option>All Food Types</option>
+                        <option>Meals</option>
+                        <option>Groceries</option>
+                        <option>Beverages</option>
+                    </select>
+                </div>
+            </header>
+
+            <!-- Donation Cards Grid -->
+            <div class="donations-grid">
+                <!-- Donation Card -->
+                <div class="donation-card">
+                    <div class="donation-header">
+                        <h3>Rice and Curry</h3>
+                        <span class="time-left">2 hours left</span>
+                    </div>
+                    <div class="donation-details">
+                        <p><strong>Restaurant:</strong> Spice Garden</p>
+                        <p><strong>Location:</strong> MG Road, Bangalore</p>
+                        <p><strong>Quantity:</strong> 50 meals</p>
+                        <p><strong>Distance:</strong> 2.5 km away</p>
+                    </div>
+                    <button class="btn btn-primary btn-claim">Claim Donation</button>
+                </div>
+                <!-- Donation Cards Grid -->
+            <div class="donations-grid">
+                <!-- Donation Card -->
+                <div class="donation-card">
+                    <div class="donation-header">
+                        <h3>Fried rice</h3>
+                        <span class="time-left">2 hours left</span>
+                    </div>
+                <div class="donation-details">
+                    <p><strong>Restaurant:</strong> Utsav</p>
+                    <p><strong>Location:</strong>Basavangudi near BMS college</p>
+                    <p><strong>Quantity:</strong> 20 meals</p>
+                    <p><strong>Distance:</strong> 2.5 km away</p>
+                </div>
+                <button class="btn btn-primary btn-claim">Claim Donation</button>
+            </div>
+
+            
+        </main>
+    </div>
+</body>
+</html> 

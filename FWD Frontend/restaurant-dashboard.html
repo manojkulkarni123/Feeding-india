@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Dashboard - Feeding India</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <a href="index.html">Feeding India</a>
+            </div>
+            <nav>
+                <a href="restaurant-dashboard.html" class="active">Dashboard</a>
+                <a href="#donations">My Donations</a>
+                <a href="#profile">Profile</a>
+                <a href="index.html" class="logout">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Restaurant Dashboard</h1>
+                <button class="btn btn-primary" id="newDonationBtn">+ New Donation</button>
+            </header>
+
+            <!-- Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Donations</h3>
+                    <p class="stat-number">156</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Donations</h3>
+                    <p class="stat-number">3</p>
+                </div>
+                <div class="stat-card">
+                    <h3>NGOs Helped</h3>
+                    <p class="stat-number">45</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Meals Donated</h3>
+                    <p class="stat-number">1,234</p>
+                </div>
+            </div>
+
+            <!-- Active Donations Table -->
+            <section class="donations-section">
+                <h2>Active Donations</h2>
+                <div class="table-container">
+                    <table class="donations-table">
+                        <thead>
+                            <tr>
+                                <th>Food Type</th>
+                                <th>Quantity</th>
+                                <th>Pickup Until</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rice and Curry</td>
+                                <td>50 meals</td>
+                                <td>2 hours</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>
+                                    <button class="btn btn-small">Edit</button>
+                                    <button class="btn btn-small btn-danger">Cancel</button>
+                                </td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <!-- Donation Modal -->
+        <div class="modal" id="donationModal">
+            <div class="modal-content">
+                <h2>Create New Donation</h2>
+                <form class="donation-form">
+                    <div class="form-group">
+                        <label>Food Type</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Quantity (in meals)</label>
+                        <input type="number" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Pickup Location</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Available Until</label>
+                        <input type="datetime-local" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Additional Notes</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="submit" class="btn btn-primary">Create Donation</button>
+                        <button type="button" class="btn btn-secondary" id="closeModal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
